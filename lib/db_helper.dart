@@ -813,25 +813,11 @@ class OrderAppDB {
     // var res;
     var query3;
     var query2;
-    // List<Map<String, dynamic>> res1 = await db.rawQuery(
-    //     'SELECT  * FROM orderBagTable WHERE customerid="${customerid}" AND os = "${os}" AND code="${code}" AND unit_name="${unit_name}"');
-    // print("insert x001 query result $res1");
 
-    // if (res1.length == 1) {
-    //   double qty1 = res1[0]["qty"];
-    //   double updatedQty = qty1 + qty;
-    //   double amount = double.parse(res1[0]["totalamount"]);
-    //   print("res1.length----${res1.length}");
-
-    //   double amount1 = double.parse(totalamount);
-    //   double updatedAmount = amount + amount1;
-    //   query2 = await db.rawUpdate(
-    //       'UPDATE orderBagTable SET qty=$qty , totalamount="${totalamount}" WHERE customerid="${customerid}" AND os = "${os}" AND code="${code}" AND unit_name="${unit_name}"');
-    // } else {
     query2 =
         'INSERT INTO orderBagTable (itemName, cartdate, carttime , os, customerid, cartrowno, code, qty, rate, totalamount, pid, unit_name, package, baseRate, cstatus) VALUES ("${itemName}","${cartdate}","${carttime}", "${os}", "${customerid}", $cartrowno, "${code}", $qty, "${rate}", "${totalamount}",  $pid, "$unit_name", "$packagenm", $baseRate, $cstatus)';
     var res = await db.rawInsert(query2);
-    // }
+  
 
     print("insert query result $res");
     print("insert-----$query2");

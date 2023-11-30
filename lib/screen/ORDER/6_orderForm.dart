@@ -238,7 +238,7 @@ class _OrderFormState extends State<OrderForm> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 SizedBox(height: size.height * 0.01),
-                              Padding(
+                                Padding(
                                   padding: const EdgeInsets.only(
                                       left: 30.0, right: 15),
                                   child: Container(
@@ -311,13 +311,15 @@ class _OrderFormState extends State<OrderForm> with TickerProviderStateMixin {
                                         return SizedBox(
                                           height: size.height * 0.1,
                                           child: TextFormField(
-                                            
                                             // scrollPadding: EdgeInsets.only(
                                             //     top: 500,),
                                             maxLines: 1,
                                             decoration: InputDecoration(
-                                              contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-                                              
+                                              contentPadding:
+                                                  EdgeInsets.symmetric(
+                                                      vertical: 10,
+                                                      horizontal: 10),
+
                                               focusedBorder: OutlineInputBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(25.0),
@@ -344,7 +346,7 @@ class _OrderFormState extends State<OrderForm> with TickerProviderStateMixin {
                                                   width: 3,
                                                 ),
                                               ),
-                                              
+
                                               hintText: 'Area / Route',
                                               helperText: ' ', // th
                                               suffixIcon: IconButton(
@@ -1350,15 +1352,28 @@ class _OrderFormState extends State<OrderForm> with TickerProviderStateMixin {
                                 SizedBox(
                                   height: size.height * 0.01,
                                 ),
-                              
-                          values.balanceLoading?SpinKitThreeBounce(color: Colors.blue,size: 15,):      values.balance==null?Container():  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text("Outstandng : "),
-                                      Text(values.balance!.toStringAsFixed(2),style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.green),),
-                                    ],
-                                  ),
-                               
+                                values.balanceLoading
+                                    ? SpinKitThreeBounce(
+                                        color: Colors.blue,
+                                        size: 15,
+                                      )
+                                    : values.balance == null
+                                        ? Container()
+                                        : Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text("Outstandng : "),
+                                              Text(
+                                                values.balance!
+                                                    .toStringAsFixed(2),
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.green),
+                                              ),
+                                            ],
+                                          ),
                               ],
                             ),
                           ),
